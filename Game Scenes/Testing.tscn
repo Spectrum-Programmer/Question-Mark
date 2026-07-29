@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bmpai1px8hkid"]
+
+[ext_resource type="PackedScene" uid="uid://c4swmsa5sb1r" path="res://Prefab Scenes/Player.tscn" id="1_rqd0y"]
+
+[sub_resource type="Gradient" id="Gradient_r1gmg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.3553136, 0.35531354, 0.35531357, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsmfw"]
+gradient = SubResource("Gradient_r1gmg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+size = Vector2(530, 20)
+
+[node name="Testing" type="Node2D" unique_id=1114255693]
+
+[node name="Player" parent="." unique_id=1126894832 instance=ExtResource("1_rqd0y")]
+position = Vector2(62, 469)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=99835247]
+position = Vector2(0, 438)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1472225631]
+position = Vector2(265, 83)
+scale = Vector2(8.28125, 0.34375)
+texture = SubResource("GradientTexture2D_tsmfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=400390025]
+position = Vector2(265, 83)
+shape = SubResource("RectangleShape2D_2h45r")

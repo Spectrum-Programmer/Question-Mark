@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d07xisu4plo03"]
+
+[ext_resource type="PackedScene" uid="uid://b58i8b1rvl8up" path="res://Prefab Scenes/Abstract/Interactable.tscn" id="1_0r34a"]
+
+[sub_resource type="Gradient" id="Gradient_0r34a"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.6056738, 1.6605109e-06, 3.85046e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2h45r"]
+gradient = SubResource("Gradient_0r34a")
+
+[node name="Lever" type="Node2D" unique_id=53912354]
+
+[node name="Interactable" parent="." unique_id=1512404579 instance=ExtResource("1_0r34a")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296224694]
+position = Vector2(3.500001, 3.4999998)
+scale = Vector2(0.02734375, 6.9999995)
+texture = SubResource("GradientTexture1D_2h45r")
