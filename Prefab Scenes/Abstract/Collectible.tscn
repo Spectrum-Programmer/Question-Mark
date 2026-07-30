@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c404v4oqlad6f"]
+
+[ext_resource type="Script" uid="uid://l6vwro5pv18n" path="res://Prefab Scenes/Abstract/collectible.gd" id="1_pnhnj"]
+
+[sub_resource type="Gradient" id="Gradient_182mx"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.91183645, 0.9118366, 7.70092e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tsmfw"]
+gradient = SubResource("Gradient_182mx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_182mx"]
+
+[node name="Collectible" type="Area2D" unique_id=520676250]
+script = ExtResource("1_pnhnj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=378400238]
+position = Vector2(10, -9.875)
+scale = Vector2(0.078124985, 20.25)
+texture = SubResource("GradientTexture1D_tsmfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=514080543]
+position = Vector2(10, -10)
+shape = SubResource("RectangleShape2D_182mx")

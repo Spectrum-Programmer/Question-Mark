@@ -23,8 +23,15 @@ func apply_gravity(delta: float) -> void:
 ## If the walk_left ("A") or walk_right ("D") keys are pressed, walk in that direction
 func walk() -> void:
 	velocity.x = 0
-	if(Input.is_action_pressed("walk_left")): velocity.x = -speed
-	elif(Input.is_action_pressed("walk_right")): velocity.x = speed
+	$AnimatedSprite2D.play()
+	if(Input.is_action_pressed("walk_left")): 
+		velocity.x = -speed
+		$AnimatedSprite2D.flip_h = true
+	elif(Input.is_action_pressed("walk_right")): 
+		velocity.x = speed
+		$AnimatedSprite2D.flip_h = false
+	else:
+		$AnimatedSprite2D.stop()
 
 ## If the jump ("W") key is pressed, and the player is on the ground, apply an upward velocity
 func jump() -> void:

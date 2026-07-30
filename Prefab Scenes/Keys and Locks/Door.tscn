@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drtwiefo64e48"]
+
+[ext_resource type="Script" uid="uid://dfggoexytytp" path="res://Prefab Scenes/Keys and Locks/door.gd" id="1_1tenm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+
+[sub_resource type="Gradient" id="Gradient_1tenm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.3224507, 0.18192914, 1.6845763e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d3t7p"]
+gradient = SubResource("Gradient_1tenm")
+
+[node name="Door" type="StaticBody2D" unique_id=2034276890]
+script = ExtResource("1_1tenm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1836919789]
+position = Vector2(10, -10)
+shape = SubResource("RectangleShape2D_2h45r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1896665326]
+position = Vector2(10.000009, -10.050604)
+scale = Vector2(0.07812507, 20.079388)
+texture = SubResource("GradientTexture1D_d3t7p")

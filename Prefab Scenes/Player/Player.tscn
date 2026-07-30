@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c4swmsa5sb1r"]
+
+[ext_resource type="Script" uid="uid://x4515i0cehfc" path="res://Prefab Scenes/Player/player.gd" id="1_6wh1l"]
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="2_pa3wn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65uxg"]
+atlas = ExtResource("2_pa3wn")
+region = Rect2(16, 97, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncum0"]
+atlas = ExtResource("2_pa3wn")
+region = Rect2(32, 97, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa3wn"]
+atlas = ExtResource("2_pa3wn")
+region = Rect2(0, 97, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h45r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65uxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncum0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa3wn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1843965455]
+script = ExtResource("1_6wh1l")
+speed = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749993300]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_2h45r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625828564]
+visible = false
+texture_filter = 1
+position = Vector2(10, 9.999999)
+scale = Vector2(1.3333334, 1.2499999)
+texture = SubResource("AtlasTexture_65uxg")
+
+[node name="GroundChecker" type="RayCast2D" parent="." unique_id=876505983]
+position = Vector2(10, 20)
+target_position = Vector2(0, 2)
+hit_from_inside = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=757769971]
+texture_filter = 1
+position = Vector2(10, 11)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_2h45r")
+frame_progress = 0.106612206

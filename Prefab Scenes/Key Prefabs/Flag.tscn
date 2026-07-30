@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://drdvhtqusybm2"]
+
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="1_qwj7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a5dg"]
+atlas = ExtResource("1_qwj7s")
+region = Rect2(304, 18, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0rlu"]
+atlas = ExtResource("1_qwj7s")
+region = Rect2(320, 18, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0h57"]
+atlas = ExtResource("1_qwj7s")
+region = Rect2(336, 18, 16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h45r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a5dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0rlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0h57")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Area2D" unique_id=91785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2058505134]
+shape = SubResource("RectangleShape2D_2h45r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=216407013]
+texture_filter = 1
+position = Vector2(4.7683716e-07, -3.5762787e-07)
+scale = Vector2(1.25, 1.3333333)
+sprite_frames = SubResource("SpriteFrames_2h45r")
+autoplay = "default"

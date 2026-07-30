@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d07xisu4plo03"]
 
 [ext_resource type="PackedScene" uid="uid://b58i8b1rvl8up" path="res://Prefab Scenes/Abstract/Interactable.tscn" id="1_0r34a"]
+[ext_resource type="Script" uid="uid://q1qet6b8k7aq" path="res://Prefab Scenes/Keys and Locks/lever.gd" id="1_32wbc"]
 
 [sub_resource type="Gradient" id="Gradient_0r34a"]
 offsets = PackedFloat32Array(0)
@@ -10,6 +11,7 @@ colors = PackedColorArray(0.6056738, 1.6605109e-06, 3.85046e-07, 1)
 gradient = SubResource("Gradient_0r34a")
 
 [node name="Lever" type="Node2D" unique_id=53912354]
+script = ExtResource("1_32wbc")
 
 [node name="Interactable" parent="." unique_id=1512404579 instance=ExtResource("1_0r34a")]
 
@@ -17,3 +19,5 @@ gradient = SubResource("Gradient_0r34a")
 position = Vector2(3.500001, 3.4999998)
 scale = Vector2(0.02734375, 6.9999995)
 texture = SubResource("GradientTexture1D_2h45r")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

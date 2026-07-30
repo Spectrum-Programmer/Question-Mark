@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bmpai1px8hkid"]
+
+[ext_resource type="PackedScene" uid="uid://c4swmsa5sb1r" path="res://Prefab Scenes/Player/Player.tscn" id="1_rqd0y"]
+[ext_resource type="PackedScene" uid="uid://d07xisu4plo03" path="res://Prefab Scenes/Keys and Locks/Lever.tscn" id="2_r1gmg"]
+[ext_resource type="PackedScene" uid="uid://drtwiefo64e48" path="res://Prefab Scenes/Keys and Locks/Door.tscn" id="3_wb45b"]
+[ext_resource type="Script" uid="uid://crb884044sawy" path="res://Non-Scene Scripts/camera_follow.gd" id="4_5j4jm"]
+[ext_resource type="PackedScene" uid="uid://c404v4oqlad6f" path="res://Prefab Scenes/Abstract/Collectible.tscn" id="4_w37bu"]
+
+[sub_resource type="Gradient" id="Gradient_r1gmg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.3553136, 0.35531354, 0.35531357, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsmfw"]
+gradient = SubResource("Gradient_r1gmg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+size = Vector2(530, 20)
+
+[node name="Testing" type="Node2D" unique_id=1114255693]
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=99835247]
+position = Vector2(0, 438)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1472225631]
+position = Vector2(265, 83)
+scale = Vector2(8.28125, 0.34375)
+texture = SubResource("GradientTexture2D_tsmfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=400390025]
+position = Vector2(265, 83)
+shape = SubResource("RectangleShape2D_2h45r")
+
+[node name="Lever" parent="." unique_id=53912354 instance=ExtResource("2_r1gmg")]
+position = Vector2(199, 484)
+scale = Vector2(3.68, 3.68)
+
+[node name="Door" parent="." unique_id=2034276890 instance=ExtResource("3_wb45b")]
+position = Vector2(341, 511)
+scale = Vector2(1, 3.8326945)
+
+[node name="Collectible" parent="." unique_id=520676250 instance=ExtResource("4_w37bu")]
+position = Vector2(265, 507)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=76437419 node_paths=PackedStringArray("player")]
+position = Vector2(213, 496)
+script = ExtResource("4_5j4jm")
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1843965455 instance=ExtResource("1_rqd0y")]
+position = Vector2(126, 451)
+
+[connection signal="pull_lever" from="Lever" to="Door" method="_on_lever_pulled"]
