@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cvh4xfcv4piya"]
+
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="1_ro332"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40g21"]
+size = Vector2(6, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40g21"]
+atlas = ExtResource("1_ro332")
+region = Rect2(340.91122, 144.00162, 6.209137, 26.086716)
+
+[node name="Chain" type="StaticBody2D" unique_id=2029970573]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1134883982]
+position = Vector2(3, -13)
+shape = SubResource("RectangleShape2D_40g21")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449774434]
+texture_filter = 1
+position = Vector2(3, -13)
+texture = SubResource("AtlasTexture_40g21")

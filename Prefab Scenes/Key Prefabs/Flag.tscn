@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://drdvhtqusybm2"]
 
+[ext_resource type="Script" uid="uid://dw2hpxg2k1fi8" path="res://Prefab Scenes/Key Prefabs/flag.gd" id="1_4a5dg"]
 [ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="1_qwj7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+size = Vector2(20, 116)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a5dg"]
 atlas = ExtResource("1_qwj7s")
@@ -34,8 +36,10 @@ animations = [{
 }]
 
 [node name="Flag" type="Area2D" unique_id=91785]
+script = ExtResource("1_4a5dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2058505134]
+position = Vector2(0, -48)
 shape = SubResource("RectangleShape2D_2h45r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=216407013]
@@ -44,3 +48,5 @@ position = Vector2(4.7683716e-07, -3.5762787e-07)
 scale = Vector2(1.25, 1.3333333)
 sprite_frames = SubResource("SpriteFrames_2h45r")
 autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

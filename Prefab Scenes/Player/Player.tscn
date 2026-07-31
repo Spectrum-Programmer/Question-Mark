@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="2_pa3wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
+size = Vector2(13, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65uxg"]
 atlas = ExtResource("2_pa3wn")
@@ -39,7 +40,7 @@ script = ExtResource("1_6wh1l")
 speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749993300]
-position = Vector2(10, 10)
+position = Vector2(9.5, 10)
 shape = SubResource("RectangleShape2D_2h45r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625828564]

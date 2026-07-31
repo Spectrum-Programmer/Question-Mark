@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cwfe248wxm831"]
 
+[ext_resource type="Script" uid="uid://dgjlmadblvu5w" path="res://Non-Scene Scripts/Level.gd" id="1_anmeo"]
 [ext_resource type="Texture2D" uid="uid://d0a0sk1b0yl7y" path="res://Assets/Farmer Story Sprites/Farmer Story Sprites.png" id="1_n6071"]
 [ext_resource type="Script" uid="uid://crb884044sawy" path="res://Non-Scene Scripts/camera_follow.gd" id="2_hxl42"]
 [ext_resource type="PackedScene" uid="uid://c4swmsa5sb1r" path="res://Prefab Scenes/Player/Player.tscn" id="3_60fuh"]
@@ -556,7 +557,12 @@ sources/0 = SubResource("TileSetAtlasSource_ph4pt")
 [sub_resource type="Theme" id="Theme_tsmfw"]
 default_font = ExtResource("10_jw8kk")
 
-[node name="Level0" type="Node2D" unique_id=1367973686]
+[node name="Level0" type="Node2D" unique_id=1367973686 node_paths=PackedStringArray("player", "spawn_location", "backtrack_location")]
+script = ExtResource("1_anmeo")
+player = NodePath("Player")
+id = 0
+spawn_location = NodePath("Spawn")
+backtrack_location = NodePath("BacktrackSpot")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1105172034 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -639,3 +645,12 @@ to move around!"
 
 [node name="Flag" parent="." unique_id=91785 instance=ExtResource("11_rxg5l")]
 position = Vector2(234, -8)
+destination = 1
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=180339993]
+position = Vector2(-38, -11)
+gizmo_extents = 14.4
+
+[node name="BacktrackSpot" type="Marker2D" parent="." unique_id=1316386625]
+position = Vector2(203, -11)
+gizmo_extents = 14.4

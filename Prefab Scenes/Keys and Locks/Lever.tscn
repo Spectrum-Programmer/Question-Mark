@@ -2,22 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://b58i8b1rvl8up" path="res://Prefab Scenes/Abstract/Interactable.tscn" id="1_0r34a"]
 [ext_resource type="Script" uid="uid://q1qet6b8k7aq" path="res://Prefab Scenes/Keys and Locks/lever.gd" id="1_32wbc"]
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="3_tuywu"]
 
-[sub_resource type="Gradient" id="Gradient_0r34a"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.6056738, 1.6605109e-06, 3.85046e-07, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu42y"]
+atlas = ExtResource("3_tuywu")
+region = Rect2(370.1227, 16.55056, 12.14856, 15.661919)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2h45r"]
-gradient = SubResource("Gradient_0r34a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qht67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk3qw"]
+atlas = ExtResource("3_tuywu")
+region = Rect2(370.18518, 16.982864, 11.949402, 15.0522)
 
 [node name="Lever" type="Node2D" unique_id=53912354]
 script = ExtResource("1_32wbc")
+off_switch = SubResource("AtlasTexture_nu42y")
+on_switch = SubResource("AtlasTexture_qht67")
 
 [node name="Interactable" parent="." unique_id=1512404579 instance=ExtResource("1_0r34a")]
+position = Vector2(0, -15)
+scale = Vector2(1.5199994, 2.119999)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296224694]
-position = Vector2(3.500001, 3.4999998)
-scale = Vector2(0.02734375, 6.9999995)
-texture = SubResource("GradientTexture1D_2h45r")
+texture_filter = 1
+position = Vector2(5.25, -7.25)
+scale = Vector2(0.95454544, 0.96666664)
+texture = SubResource("AtlasTexture_pk3qw")
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

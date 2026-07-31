@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drtwiefo64e48"]
 
-[ext_resource type="Script" uid="uid://dfggoexytytp" path="res://Prefab Scenes/Keys and Locks/door.gd" id="1_1tenm"]
+[ext_resource type="Script" uid="uid://dfggoexytytp" path="res://Prefab Scenes/Keys and Locks/lever_system.gd" id="1_1tenm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h45r"]
 

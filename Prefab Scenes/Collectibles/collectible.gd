@@ -3,7 +3,7 @@ class_name Collectible
 
 signal collected
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if in_range and Input.is_action_just_pressed("right_click"):
 		collect()
 

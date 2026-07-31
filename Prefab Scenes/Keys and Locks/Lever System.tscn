@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://4jn2fjemffxx"]
+
+[ext_resource type="Script" uid="uid://dfggoexytytp" path="res://Prefab Scenes/Keys and Locks/lever_system.gd" id="1_e204l"]
+
+[node name="LeverSystem" type="Node2D" unique_id=1465703125]
+script = ExtResource("1_e204l")

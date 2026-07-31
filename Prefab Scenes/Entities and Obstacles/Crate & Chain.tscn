@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://crl50uek72amd"]
+
+[ext_resource type="Script" uid="uid://qoiwxycofnkb" path="res://Prefab Scenes/Entities and Obstacles/crate_&_chain.gd" id="1_jct18"]
+[ext_resource type="PackedScene" uid="uid://cvh4xfcv4piya" path="res://Prefab Scenes/Entities and Obstacles/Chain.tscn" id="2_g5wi2"]
+[ext_resource type="PackedScene" uid="uid://clwmedw2qcw3v" path="res://Prefab Scenes/Entities and Obstacles/Crate.tscn" id="3_2qqke"]
+
+[node name="Crate&Chain" type="Node2D" unique_id=335399191]
+script = ExtResource("1_jct18")
+
+[node name="Chains" type="Node2D" parent="." unique_id=1072602524]
+
+[node name="Chain3" parent="Chains" unique_id=187771009 instance=ExtResource("2_g5wi2")]
+position = Vector2(26, -103)
+
+[node name="Chain4" parent="Chains" unique_id=499668323 instance=ExtResource("2_g5wi2")]
+position = Vector2(26, -81)
+
+[node name="Chain2" parent="Chains" unique_id=142108872 instance=ExtResource("2_g5wi2")]
+position = Vector2(26, -58)
+
+[node name="Chain" parent="Chains" unique_id=1438875225 instance=ExtResource("2_g5wi2")]
+position = Vector2(26, -36)
+
+[node name="Crates" type="Node2D" parent="." unique_id=382017110]
+
+[node name="Crate" parent="Crates" unique_id=1139690830 instance=ExtResource("3_2qqke")]
+position = Vector2(1, 0)
+
+[node name="Crate2" parent="Crates" unique_id=946602981 instance=ExtResource("3_2qqke")]
+position = Vector2(20, 0)
+
+[node name="Crate3" parent="Crates" unique_id=733928074 instance=ExtResource("3_2qqke")]
+position = Vector2(39, 0)
+
+[node name="Crate7" parent="Crates" unique_id=239621547 instance=ExtResource("3_2qqke")]
+position = Vector2(58, 0)
+
+[node name="Crate8" parent="Crates" unique_id=539129999 instance=ExtResource("3_2qqke")]
+position = Vector2(58, -19)
+
+[node name="Crate4" parent="Crates" unique_id=1278009604 instance=ExtResource("3_2qqke")]
+position = Vector2(1, -20)
+
+[node name="Crate6" parent="Crates" unique_id=427934791 instance=ExtResource("3_2qqke")]
+position = Vector2(1, -40)
+
+[node name="Crate5" parent="Crates" unique_id=110075674 instance=ExtResource("3_2qqke")]
+position = Vector2(20, -20)

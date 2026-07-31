@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b4bic3tqarm6t"]
+
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="1_1ssb5"]
+[ext_resource type="Script" uid="uid://b8sabop4hsa2t" path="res://Prefab Scenes/Entities and Obstacles/sign.gd" id="1_fdelx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40g21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40g21"]
+atlas = ExtResource("1_1ssb5")
+region = Rect2(416.90262, 16.801235, 14.260834, 15.289562)
+
+[node name="Sign" type="Area2D" unique_id=109479214]
+script = ExtResource("1_fdelx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1932436339]
+shape = SubResource("RectangleShape2D_40g21")
+
+[node name="SignSprite" type="Sprite2D" parent="." unique_id=1163681769]
+texture_filter = 1
+texture = SubResource("AtlasTexture_40g21")

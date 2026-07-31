@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://07hl8f501tnl"]
+
+[ext_resource type="Texture2D" uid="uid://degypi66w5bmf" path="res://Assets/Farmer Story Sprites/Farmer Story SpritesV2.png" id="1_w56yp"]
+[ext_resource type="Script" uid="uid://34jkijxct0e1" path="res://Prefab Scenes/UI/sign_popup.gd" id="1_y4v1e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tihrq"]
+atlas = ExtResource("1_w56yp")
+region = Rect2(416.99847, 16.965742, 14.084595, 9.877338)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjuv8"]
+atlas = ExtResource("1_w56yp")
+region = Rect2(160.81992, 320.87463, 14.320862, 14.266632)
+
+[node name="SignPopup" type="Control" unique_id=219939133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4v1e")
+
+[node name="UISignTexture" type="TextureRect" parent="." unique_id=461110572]
+texture_filter = 1
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 658.0
+texture = SubResource("AtlasTexture_tihrq")
+
+[node name="SignText" type="Label" parent="." unique_id=91177139]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 226.0
+offset_right = 982.0
+offset_bottom = 522.0
+
+[node name="CloseSignButton" type="Button" parent="." unique_id=658762291]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 78.0
+
+[node name="CloseSignIcon" type="TextureRect" parent="CloseSignButton" unique_id=670084382]
+layout_mode = 0
+offset_right = 79.0
+offset_bottom = 78.0
+texture = SubResource("AtlasTexture_bjuv8")

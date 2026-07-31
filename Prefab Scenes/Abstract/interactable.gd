@@ -23,6 +23,6 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 # Check if the player enters the range of the interactable and clicks MB1
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if in_range and Input.is_action_just_pressed("click"):
 		interacted.emit()

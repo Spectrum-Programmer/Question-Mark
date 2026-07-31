@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d07xisu4plo03" path="res://Prefab Scenes/Keys and Locks/Lever.tscn" id="2_r1gmg"]
 [ext_resource type="PackedScene" uid="uid://drtwiefo64e48" path="res://Prefab Scenes/Keys and Locks/Door.tscn" id="3_wb45b"]
 [ext_resource type="Script" uid="uid://crb884044sawy" path="res://Non-Scene Scripts/camera_follow.gd" id="4_5j4jm"]
-[ext_resource type="PackedScene" uid="uid://c404v4oqlad6f" path="res://Prefab Scenes/Abstract/Collectible.tscn" id="4_w37bu"]
+[ext_resource type="PackedScene" uid="uid://c404v4oqlad6f" path="res://Prefab Scenes/Collectibles/Collectible.tscn" id="4_w37bu"]
 
 [sub_resource type="Gradient" id="Gradient_r1gmg"]
 offsets = PackedFloat32Array(0)
