@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bignfewxohuqy"]
+
+[ext_resource type="Script" uid="uid://bnts0uvtltcnb" path="res://Prefab Scenes/Key Prefabs/question_mark.gd" id="1_b5bhc"]
+[ext_resource type="FontFile" uid="uid://dgeax0u3km31j" path="res://Assets/BoldPixels.ttf" id="1_baiyc"]
+
+[sub_resource type="Theme" id="Theme_2h45r"]
+default_font = ExtResource("1_baiyc")
+default_font_size = 60
+
+[node name="QuestionMark" type="Control" unique_id=883180550]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b5bhc")
+
+[node name="Label" type="Label" parent="." unique_id=1684581674]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -27.0
+offset_right = 13.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2h45r")
+text = "?"

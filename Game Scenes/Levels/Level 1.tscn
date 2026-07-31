@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b73o23irlohn5"]
 
 [ext_resource type="Script" uid="uid://crb884044sawy" path="res://Non-Scene Scripts/camera_follow.gd" id="1_l64qh"]
-[ext_resource type="Script" uid="uid://dgjlmadblvu5w" path="res://Non-Scene Scripts/Level.gd" id="1_yomdr"]
+[ext_resource type="Script" uid="uid://dgjlmadblvu5w" path="res://Non-Scene Scripts/level.gd" id="1_yomdr"]
 [ext_resource type="Texture2D" uid="uid://bofacdfw2ywn7" path="res://Assets/Farmer Story Backgrounds/Field/1 Layer Field.png" id="2_yomdr"]
 [ext_resource type="Texture2D" uid="uid://cpgyi1e75iloh" path="res://Assets/Farmer Story Backgrounds/Field/2 Layer Field.png" id="3_6j38q"]
 [ext_resource type="Texture2D" uid="uid://lm3rxmtfu6s4" path="res://Assets/Farmer Story Backgrounds/Field/3 Layer Field.png" id="4_pk3qw"]

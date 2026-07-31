@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d07xisu4plo03" path="res://Prefab Scenes/Keys and Locks/Lever.tscn" id="2_r1gmg"]
 [ext_resource type="PackedScene" uid="uid://drtwiefo64e48" path="res://Prefab Scenes/Keys and Locks/Door.tscn" id="3_wb45b"]
 [ext_resource type="Script" uid="uid://crb884044sawy" path="res://Non-Scene Scripts/camera_follow.gd" id="4_5j4jm"]
-[ext_resource type="PackedScene" uid="uid://c404v4oqlad6f" path="res://Prefab Scenes/Collectibles/Collectible.tscn" id="4_w37bu"]
+[ext_resource type="PackedScene" uid="uid://b4bic3tqarm6t" path="res://Prefab Scenes/Entities and Obstacles/Sign.tscn" id="5_5j4jm"]
 
 [sub_resource type="Gradient" id="Gradient_r1gmg"]
 offsets = PackedFloat32Array(0)
@@ -38,7 +38,7 @@ scale = Vector2(3.68, 3.68)
 position = Vector2(341, 511)
 scale = Vector2(1, 3.8326945)
 
-[node name="Collectible" parent="." unique_id=520676250 instance=ExtResource("4_w37bu")]
+[node name="Collectible" parent="." unique_id=520676250]
 position = Vector2(265, 507)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=76437419 node_paths=PackedStringArray("player")]
@@ -48,5 +48,8 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1843965455 instance=ExtResource("1_rqd0y")]
 position = Vector2(126, 451)
+
+[node name="Sign" parent="." unique_id=109479214 instance=ExtResource("5_5j4jm")]
+position = Vector2(290, 487)
 
 [connection signal="pull_lever" from="Lever" to="Door" method="_on_lever_pulled"]

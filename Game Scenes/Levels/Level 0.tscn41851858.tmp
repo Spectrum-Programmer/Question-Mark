@@ -12,14 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c0gc8r2q8iiy6" path="res://Assets/Farmer Story Backgrounds/Field/6 Layer Field.png" id="7_toof2"]
 [ext_resource type="PackedScene" uid="uid://bignfewxohuqy" path="res://Prefab Scenes/Key Prefabs/question_mark.tscn" id="9_toof2"]
 [ext_resource type="FontFile" uid="uid://dgeax0u3km31j" path="res://Assets/BoldPixels.ttf" id="10_jw8kk"]
-[ext_resource type="Script" uid="uid://cn5uo76kywqv1" path="res://Prefab Scenes/Key Prefabs/question_data.gd" id="10_nu7br"]
 [ext_resource type="PackedScene" uid="uid://drdvhtqusybm2" path="res://Prefab Scenes/Key Prefabs/Flag.tscn" id="11_rxg5l"]
-
-[sub_resource type="Resource" id="Resource_ypyyd"]
-script = ExtResource("10_nu7br")
-trigger1 = NodePath("../../../Question Nodes/QuestionMarker1")
-trigger2 = NodePath("../../../Question Nodes/QuestionMarker2")
-metadata/_custom_type_script = "uid://cn5uo76kywqv1"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ph4pt"]
 texture = ExtResource("1_n6071")
@@ -645,7 +638,6 @@ offset_right = -180.0
 offset_bottom = -95.0
 scale = Vector2(0.3199994, 0.3199994)
 camera = NodePath("..")
-questionDatas = Array[ExtResource("10_nu7br")]([SubResource("Resource_ypyyd")])
 
 [node name="Player" parent="Player" unique_id=1843965455 instance=ExtResource("3_60fuh")]
 z_index = 2

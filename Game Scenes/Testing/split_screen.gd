@@ -19,6 +19,11 @@ extends Node2D
 	Vector2(19,330),
 	Vector2(583,330), ]
 
+func _ready() -> void:
+	set_screens(1)
+	await get_tree().create_timer(5).timeout
+	set_screens(2)
+
 func set_screens(amount: int) -> void:
 	for i in range(0,amount):
 		textures[i].visible = true
@@ -31,3 +36,7 @@ func set_screens(amount: int) -> void:
 func summation(num: int) -> int:
 	if(num == 0): return num
 	return summation(num - 1) + num
+
+
+func _on_level_0_viewport_signal(num: int) -> void:
+	set_screens(num) # Replace with function body.

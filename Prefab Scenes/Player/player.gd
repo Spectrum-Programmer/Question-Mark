@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed = 150
 @export var jump_power = 300
 
+var alt = false
+
 # Every physics frame, check for different movement events
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
@@ -24,17 +26,31 @@ func apply_gravity(delta: float) -> void:
 func walk() -> void:
 	velocity.x = 0
 	$AnimatedSprite2D.play()
-	if(Input.is_action_pressed("walk_left")): 
-		velocity.x = -speed
-		$AnimatedSprite2D.flip_h = true
-	elif(Input.is_action_pressed("walk_right")): 
-		velocity.x = speed
-		$AnimatedSprite2D.flip_h = false
+	if not alt:
+		if(Input.is_action_pressed("walk_left")): 
+			velocity.x = -speed
+			$AnimatedSprite2D.flip_h = true
+		elif(Input.is_action_pressed("walk_right")): 
+			velocity.x = speed
+			$AnimatedSprite2D.flip_h = false
+		else:
+			$AnimatedSprite2D.stop()
 	else:
-		$AnimatedSprite2D.stop()
+		if(Input.is_action_pressed("walk_left_alt")): 
+			velocity.x = -speed
+			$AnimatedSprite2D.flip_h = true
+		elif(Input.is_action_pressed("walk_right_alt")): 
+			velocity.x = speed
+			$AnimatedSprite2D.flip_h = false
+		else:
+			$AnimatedSprite2D.stop()
 
 ## If the jump ("W") key is pressed, and the player is on the ground, apply an upward velocity
 func jump() -> void:
-	if(Input.is_action_just_pressed("jump") and is_on_floor()):
-		velocity.y = -jump_power
+	if not alt:
+		if(Input.is_action_just_pressed("jump") and is_on_floor()):
+			velocity.y = -jump_power
+	else:
+		if(Input.is_action_just_pressed("jump_alt") and is_on_floor()):
+			velocity.y = -jump_power
 	

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxf16pk3wk4dj" path="res://Game Scenes/Testing/split_screen.gd" id="1_d6k48"]
 [ext_resource type="PackedScene" uid="uid://bmpai1px8hkid" path="res://Game Scenes/Testing/Testing.tscn" id="1_jc5u8"]
+[ext_resource type="PackedScene" uid="uid://cwfe248wxm831" path="res://Game Scenes/Levels/Level 0.tscn" id="2_msm5g"]
 
 [sub_resource type="Gradient" id="Gradient_d6k48"]
 offsets = PackedFloat32Array(0.00913242)
@@ -16,7 +17,7 @@ viewport_path = NodePath("SubViewportContainer/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_jc5u8"]
 viewport_path = NodePath("SubViewportContainer2/SubViewport2")
 
-[node name="Testing2" type="Node2D" unique_id=1054072517 node_paths=PackedStringArray("textures", "viewports")]
+[node name="MainScreen" type="Node2D" unique_id=1054072517 node_paths=PackedStringArray("textures", "viewports")]
 script = ExtResource("1_d6k48")
 textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4")]
 viewports = [NodePath("SubViewportContainer/SubViewport"), NodePath("SubViewportContainer2/SubViewport2"), NodePath("SubViewportContainer3/SubViewport2"), NodePath("SubViewportContainer4/SubViewport2")]
@@ -39,14 +40,13 @@ render_target_update_mode = 4
 
 [node name="ViewportBG" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1863063563]
 anchors_preset = -1
-offset_left = -502.0
-offset_top = -481.0
-offset_right = 979.0
-offset_bottom = 1003.0
+offset_left = -629.0
+offset_top = -538.0
+offset_right = 852.0
+offset_bottom = 946.0
 texture = SubResource("GradientTexture1D_tsmfw")
 
-[node name="Testing" parent="SubViewportContainer/SubViewport" unique_id=35126894 instance=ExtResource("1_jc5u8")]
-position = Vector2(7, -72)
+[node name="Level0" parent="SubViewportContainer/SubViewport" unique_id=1367973686 instance=ExtResource("2_msm5g")]
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1262271752]
 offset_left = -7727.0

@@ -45,3 +45,5 @@ layout_mode = 0
 offset_right = 79.0
 offset_bottom = 78.0
 texture = SubResource("AtlasTexture_bjuv8")
+
+[connection signal="button_down" from="CloseSignButton" to="." method="_on_close_sign_button_button_down"]

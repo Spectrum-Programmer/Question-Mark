@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bs0d6gim3b5qk"]
+
+[ext_resource type="Script" uid="uid://dxf16pk3wk4dj" path="res://Game Scenes/Testing/split_screen.gd" id="1_d6k48"]
+[ext_resource type="PackedScene" uid="uid://bmpai1px8hkid" path="res://Game Scenes/Testing/Testing.tscn" id="1_jc5u8"]
+[ext_resource type="PackedScene" uid="uid://cwfe248wxm831" path="res://Game Scenes/Levels/Level 0.tscn" id="2_msm5g"]
+
+[sub_resource type="Gradient" id="Gradient_d6k48"]
+offsets = PackedFloat32Array(0.00913242)
+colors = PackedColorArray(0.38928655, 0.38928664, 0.38928658, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tsmfw"]
+gradient = SubResource("Gradient_d6k48")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tsmfw"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jc5u8"]
+viewport_path = NodePath("SubViewportContainer2/SubViewport2")
+
+[node name="MainScreen" type="Node2D" unique_id=1054072517 node_paths=PackedStringArray("textures", "viewports")]
+script = ExtResource("1_d6k48")
+textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4")]
+viewports = [NodePath("SubViewportContainer/SubViewport"), NodePath("SubViewportContainer2/SubViewport2"), NodePath("SubViewportContainer3/SubViewport2"), NodePath("SubViewportContainer4/SubViewport2")]
+
+[node name="Main Cam" type="Camera2D" parent="." unique_id=1451741946]
+position = Vector2(578, 323)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=858880582]
+offset_left = -7727.0
+offset_top = -16317.0
+offset_right = -6577.0
+offset_bottom = -15667.0
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=150707392]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 4
+
+[node name="ViewportBG" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1863063563]
+anchors_preset = -1
+offset_left = -629.0
+offset_top = -538.0
+offset_right = 852.0
+offset_bottom = 946.0
+texture = SubResource("GradientTexture1D_tsmfw")
+
+[node name="Level0" parent="SubViewportContainer/SubViewport" unique_id=1367973686 instance=ExtResource("2_msm5g")]
+position = Vector2(139, 135)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1262271752]
+offset_left = -7727.0
+offset_top = -13736.0
+offset_right = -6577.0
+offset_bottom = -13086.0
+mouse_target = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer2" unique_id=834186310]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 4
+
+[node name="ViewportBG" type="TextureRect" parent="SubViewportContainer2/SubViewport2" unique_id=104535683]
+anchors_preset = -1
+offset_left = -289.0
+offset_top = -397.0
+offset_right = 848.0
+offset_bottom = 883.0
+texture = SubResource("GradientTexture1D_tsmfw")
+
+[node name="Testing2" parent="SubViewportContainer2/SubViewport2" unique_id=1323078989 instance=ExtResource("1_jc5u8")]
+position = Vector2(1, -70)
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="." unique_id=297301939]
+offset_left = -3676.0
+offset_top = -16489.0
+offset_right = -2526.0
+offset_bottom = -15839.0
+mouse_target = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer3" unique_id=1520021067]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 4
+
+[node name="ViewportBG" type="TextureRect" parent="SubViewportContainer3/SubViewport2" unique_id=965944352]
+anchors_preset = -1
+offset_left = -289.0
+offset_top = -397.0
+offset_right = 848.0
+offset_bottom = 883.0
+texture = SubResource("GradientTexture1D_tsmfw")
+
+[node name="Testing2" parent="SubViewportContainer3/SubViewport2" unique_id=1114255693 instance=ExtResource("1_jc5u8")]
+position = Vector2(1, -70)
+
+[node name="SubViewportContainer4" type="SubViewportContainer" parent="." unique_id=1102778938]
+offset_left = -3322.0
+offset_top = -13736.0
+offset_right = -2172.0
+offset_bottom = -13086.0
+mouse_target = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer4" unique_id=170252567]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 4
+
+[node name="ViewportBG" type="TextureRect" parent="SubViewportContainer4/SubViewport2" unique_id=1254608484]
+anchors_preset = -1
+offset_left = -289.0
+offset_top = -397.0
+offset_right = 848.0
+offset_bottom = 883.0
+texture = SubResource("GradientTexture1D_tsmfw")
+
+[node name="Testing2" parent="SubViewportContainer4/SubViewport2" unique_id=1419631278 instance=ExtResource("1_jc5u8")]
+position = Vector2(1, -70)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=667009161]
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 569.0
+offset_bottom = 320.0
+texture = SubResource("ViewportTexture_tsmfw")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=116514069]
+offset_left = 583.0
+offset_top = 10.0
+offset_right = 1133.0
+offset_bottom = 320.0
+texture = SubResource("ViewportTexture_jc5u8")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1802734079]
+offset_left = 19.0
+offset_top = 330.0
+offset_right = 569.0
+offset_bottom = 640.0
+texture = SubResource("ViewportTexture_jc5u8")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1585305937]
+offset_left = 583.0
+offset_top = 330.0
+offset_right = 1133.0
+offset_bottom = 640.0
+texture = SubResource("ViewportTexture_jc5u8")
+expand_mode = 1
