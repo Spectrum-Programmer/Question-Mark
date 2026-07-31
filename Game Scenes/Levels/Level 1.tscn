@@ -647,14 +647,16 @@ theme = SubResource("Theme_tsmfw")
 text = "Use Left Click to Interact
 & Right Click to Collect!"
 
-[node name="Flag" parent="." unique_id=91785 instance=ExtResource("11_4xht5")]
+[node name="Flag" parent="." unique_id=91785 node_paths=PackedStringArray("root") instance=ExtResource("11_4xht5")]
 position = Vector2(-262, -8)
 scene_id = 1
+root = NodePath("..")
 
-[node name="Flag2" parent="." unique_id=927357740 instance=ExtResource("11_4xht5")]
+[node name="Flag2" parent="." unique_id=927357740 node_paths=PackedStringArray("root") instance=ExtResource("11_4xht5")]
 position = Vector2(327, -7)
 destination = 1
 scene_id = 1
+root = NodePath("..")
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=180339993]
 position = Vector2(-215, -10)

@@ -21,8 +21,6 @@ extends Node2D
 
 func _ready() -> void:
 	set_screens(1)
-	await get_tree().create_timer(5).timeout
-	set_screens(2)
 
 func set_screens(amount: int) -> void:
 	for i in range(0,amount):
@@ -38,5 +36,10 @@ func summation(num: int) -> int:
 	return summation(num - 1) + num
 
 
-func _on_level_0_viewport_signal(num: int) -> void:
+func _on_viewport_signal(num: int, packed: PackedScene) -> void:
 	set_screens(num) # Replace with function body.
+	for i in range(1, num):
+		var alt_level = packed.instantiate(i)
+		alt_level.reparent(viewports[i])
+		
+		

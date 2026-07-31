@@ -7,22 +7,22 @@ extends Control
 
 var locked = false
 var shake_done = false
-var grab_locked = false
+var mouse_in_range = false
+var dragging = false
 
 signal question_placed(id: int)
 signal question_lifted(id: int)
 
 func _process(delta: float) -> void:
-	if locked and shake_done and Input.is_action_just_pressed("click"):
-		grab_locked = true
+	if locked and shake_done and mouse_in_range and Input.is_action_just_pressed("click"):
 		unlock_question_mark()
-		await get_tree().create_timer(0.1).timeout
-		grab_locked = false
-	elif not locked and not grab_locked:
+	elif not locked and (mouse_in_range or dragging):
 		if Input.is_action_pressed("click"):
+			dragging = true
 			global_position = get_global_mouse_position()
 		if Input.is_action_just_released("click"):
-			var questionRect = get_child(0).get_global_rect()
+			dragging = false
+			var questionRect = get_global_rect()
 			for data in questionDatas:
 				var node1 = get_node(data.trigger1)
 				var node2 = get_node(data.trigger2)
@@ -40,6 +40,15 @@ func _process(delta: float) -> void:
 func unlock_question_mark() -> void:
 	reparent(camera, true)
 	position = pos_in_cam
+	await get_tree().create_timer(0.1).timeout
 	locked = false
 					
 		
+
+
+func _on_mouse_entered() -> void:
+	mouse_in_range = true 
+
+
+func _on_mouse_exited() -> void:
+	mouse_in_range = false

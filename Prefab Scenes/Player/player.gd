@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 150
 @export var jump_power = 300
@@ -54,3 +55,5 @@ func jump() -> void:
 		if(Input.is_action_just_pressed("jump_alt") and is_on_floor()):
 			velocity.y = -jump_power
 	
+func set_alt(altMove: bool) -> void:
+	alt = altMove

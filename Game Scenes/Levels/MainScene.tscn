@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs0d6gim3b5qk"]
 
-[ext_resource type="Script" uid="uid://dxf16pk3wk4dj" path="res://Game Scenes/Testing/split_screen.gd" id="1_q3l8l"]
+[ext_resource type="Script" uid="uid://dxf16pk3wk4dj" path="res://Game Scenes/Levels/split_screen.gd" id="1_q3l8l"]
 [ext_resource type="PackedScene" uid="uid://cwfe248wxm831" path="res://Game Scenes/Levels/Level 0.tscn" id="2_spviw"]
 
 [sub_resource type="Gradient" id="Gradient_d6k48"]
@@ -25,10 +25,10 @@ viewports = [NodePath("SubViewportContainer/SubViewport"), NodePath("SubViewport
 position = Vector2(578, 323)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=858880582]
-offset_left = -7727.0
-offset_top = -16317.0
-offset_right = -6577.0
-offset_bottom = -15667.0
+offset_left = -151.0
+offset_top = -4003.0
+offset_right = 999.0
+offset_bottom = -3353.0
 mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=150707392]
@@ -40,10 +40,10 @@ render_target_update_mode = 4
 [node name="Level0" parent="SubViewportContainer/SubViewport" unique_id=1367973686 instance=ExtResource("2_spviw")]
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1262271752]
-offset_left = -7727.0
-offset_top = -13736.0
-offset_right = -6577.0
-offset_bottom = -13086.0
+offset_left = -151.0
+offset_top = -3174.0
+offset_right = 999.0
+offset_bottom = -2524.0
 mouse_target = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer2" unique_id=834186310]
@@ -61,10 +61,10 @@ offset_bottom = 883.0
 texture = SubResource("GradientTexture1D_tsmfw")
 
 [node name="SubViewportContainer3" type="SubViewportContainer" parent="." unique_id=297301939]
-offset_left = -3676.0
-offset_top = -16489.0
-offset_right = -2526.0
-offset_bottom = -15839.0
+offset_left = -48.0
+offset_top = -2000.0
+offset_right = 1102.0
+offset_bottom = -1350.0
 mouse_target = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer3" unique_id=1520021067]
@@ -82,10 +82,10 @@ offset_bottom = 883.0
 texture = SubResource("GradientTexture1D_tsmfw")
 
 [node name="SubViewportContainer4" type="SubViewportContainer" parent="." unique_id=1102778938]
-offset_left = -3322.0
-offset_top = -13736.0
-offset_right = -2172.0
-offset_bottom = -13086.0
+offset_left = -96.0
+offset_top = -1105.0
+offset_right = 1054.0
+offset_bottom = -455.0
 mouse_target = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer4" unique_id=170252567]
@@ -134,4 +134,4 @@ offset_bottom = 640.0
 texture = SubResource("ViewportTexture_jc5u8")
 expand_mode = 1
 
-[connection signal="viewport_signal" from="SubViewportContainer/SubViewport/Level0" to="." method="_on_level_0_viewport_signal"]
+[connection signal="viewport_signal" from="SubViewportContainer/SubViewport/Level0" to="." method="_on_viewport_signal"]

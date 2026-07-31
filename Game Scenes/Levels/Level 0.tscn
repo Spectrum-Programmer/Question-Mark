@@ -565,10 +565,12 @@ sources/0 = SubResource("TileSetAtlasSource_ph4pt")
 [sub_resource type="Theme" id="Theme_tsmfw"]
 default_font = ExtResource("10_jw8kk")
 
-[node name="Level0" type="Node2D" unique_id=1367973686 node_paths=PackedStringArray("player", "spawn_location", "backtrack_location")]
+[node name="Level0" type="Node2D" unique_id=1367973686 node_paths=PackedStringArray("altmode1", "altmode2", "player", "spawn_location", "backtrack_location")]
 script = ExtResource("1_nu7br")
-player = NodePath("Player/Player")
 id = 0
+altmode1 = NodePath("Level Nodes/Alt1")
+altmode2 = NodePath("Level Nodes/Alt2")
+player = NodePath("Player/Player")
 spawn_location = NodePath("Constants/Spawn")
 backtrack_location = NodePath("Constants/BacktrackSpot")
 
@@ -587,6 +589,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 
 [node name="BG1" type="TextureRect" parent="Player/Camera2D/Backgrounds" unique_id=1747437203]
 layout_mode = 0
@@ -639,6 +642,7 @@ offset_bottom = 326.0
 texture = ExtResource("7_toof2")
 
 [node name="QuestionMark" parent="Player/Camera2D" unique_id=883180550 node_paths=PackedStringArray("camera") instance=ExtResource("9_toof2")]
+z_index = 1
 offset_left = -180.0
 offset_top = -95.0
 offset_right = -180.0
@@ -661,9 +665,10 @@ gizmo_extents = 14.4
 position = Vector2(203, -11)
 gizmo_extents = 14.4
 
-[node name="End Flag" parent="Constants" unique_id=91785 instance=ExtResource("11_rxg5l")]
+[node name="End Flag" parent="Constants" unique_id=91785 node_paths=PackedStringArray("root") instance=ExtResource("11_rxg5l")]
 position = Vector2(234, -8)
 destination = 1
+root = NodePath("../..")
 
 [node name="Question Nodes" type="Node2D" parent="." unique_id=1203288192]
 
@@ -718,5 +723,4 @@ theme = SubResource("Theme_tsmfw")
 text = "Press Arrow Keys
 to move around"
 
-[connection signal="question_placed" from="Player/Camera2D/QuestionMark" to="." method="_on_question_mark_question_placed"]
 [connection signal="question_placed" from="Player/Camera2D/QuestionMark" to="Player/Camera2D" method="camera_shake" unbinds=1 binds= [4]]

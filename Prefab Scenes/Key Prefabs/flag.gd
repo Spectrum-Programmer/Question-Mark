@@ -2,6 +2,7 @@ extends Area2D
 
 @export_enum("Prev", "Next") var destination: int
 @export var scene_id: int
+@export var root: Level
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -10,10 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		var levels = global.levels
 		
-		var packed_scene = PackedScene.new()
-		var root = get_tree().current_scene
-		set_to_owner(root, root)
-		packed_scene.pack(root)
+		var packed_scene = root.PackScene()
 		global.levels[scene_id] = packed_scene
 		
 		var index : int
@@ -29,8 +27,4 @@ func _on_body_entered(body: Node2D) -> void:
 				+ ".tscn"
 			)
 		print(global.levels)
-			
-func set_to_owner(root: Node, node: Node) -> void:
-	for child in node.get_children():
-		child.owner = root
-		set_to_owner(root, child)
+		
